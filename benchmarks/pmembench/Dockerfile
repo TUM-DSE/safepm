@@ -32,25 +32,25 @@ ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
 # Install PMDK
 WORKDIR /
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_safepm -b pmasan-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_safepm -b pmasan-1.9.2
 WORKDIR /pmdk_safepm
 RUN make -j7
 
 WORKDIR /
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_safepm_partial_coverage -b pmasan-1.9.2-partial_coverage
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_safepm_partial_coverage -b pmasan-1.9.2-partial_coverage
 WORKDIR /pmdk_safepm_partial_coverage
 RUN make -j7
 
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_wrappers_only -b pmasan-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_wrappers_only -b pmasan-1.9.2
 WORKDIR /pmdk_wrappers_only
 RUN git apply disable_asan.patch
 RUN make -j7
 
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_asan_only -b asan_only-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_asan_only -b asan_only-1.9.2
 WORKDIR /pmdk_asan_only
 RUN make -j7
 
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_vanilla -b vanilla-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_vanilla -b vanilla-1.9.2
 WORKDIR /pmdk_vanilla
 RUN make -j7
 

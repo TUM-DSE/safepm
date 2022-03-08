@@ -32,7 +32,7 @@ ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
 # Install PMDK
 WORKDIR /
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk
 WORKDIR /pmdk
 RUN git checkout pmasan-1.9.2
 RUN make -j7

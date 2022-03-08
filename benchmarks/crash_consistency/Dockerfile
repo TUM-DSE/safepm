@@ -33,7 +33,7 @@ RUN apt-get update && apt-get -qq install -y \
 ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
 # Install PMDK
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_wrappers_only -b pmasan-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_wrappers_only -b pmasan-1.9.2
 WORKDIR /pmdk_wrappers_only
 RUN git apply disable_asan.patch
 RUN make -j7

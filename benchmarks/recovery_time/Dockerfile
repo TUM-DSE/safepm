@@ -29,7 +29,7 @@ RUN apt-get update && apt-get -qq install -y \
 
 # Install PMDK
 WORKDIR /
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_safepm -b pmasan-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_safepm -b pmasan-1.9.2
 WORKDIR /pmdk_safepm
 RUN make -j7
 RUN mkdir -p /safepm
@@ -41,7 +41,7 @@ WORKDIR /recovery-safepm
 RUN mkdir -p build
 RUN make clean && make
 
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_wrappers_only -b pmasan-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_wrappers_only -b pmasan-1.9.2
 WORKDIR /pmdk_wrappers_only
 RUN git apply disable_asan.patch
 RUN make -j7
@@ -54,7 +54,7 @@ WORKDIR /recovery-wrappers
 RUN mkdir -p build
 RUN make clean && make NO_ASAN=1
 
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_asan_only -b asan_only-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_asan_only -b asan_only-1.9.2
 WORKDIR /pmdk_asan_only
 RUN make -j7
 RUN mkdir -p /asan
@@ -66,7 +66,7 @@ WORKDIR /recovery-asan
 RUN mkdir -p build
 RUN make clean && make
 
-RUN git clone https://github.com/mstniy/pmdk.git /pmdk_vanilla -b vanilla-1.9.2
+RUN git clone https://github.com/TUM-DSE/safepm-pmdk.git /pmdk_vanilla -b vanilla-1.9.2
 WORKDIR /pmdk_vanilla
 RUN make -j7
 RUN mkdir -p /vanilla
