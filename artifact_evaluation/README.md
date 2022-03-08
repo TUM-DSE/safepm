@@ -12,7 +12,7 @@ In case you do not have a machine with persistent memory, you can execute the ex
 
 Further, you need to get the source code of SafePM. It can be found by simply cloning the current repository:
 ```
-$ git clone git@github.com:mstniy/safepm.git
+$ git clone git@github.com:TUM-DSE/safepm.git
 ```
 
 ## Experiments execution
@@ -76,7 +76,7 @@ $ ./valgrind_summary.sh
 ## Benchmark configuration
 
 ### Dockerfiles
-For each of our benchmarks we provide Dockerfile(s). They include the software dependencies required to run each experiment. Additionally, the Dockerfile includes the setup of the variants for the experiments. They clone and install the appropriate PMDK fork(s) and run patches, where applicable. For more information about SafePM's PMDK forks, please see [here](https://github.com/mstniy/safepm#pmdk-submodule).
+For each of our benchmarks we provide Dockerfile(s). They include the software dependencies required to run each experiment. Additionally, the Dockerfile includes the setup of the variants for the experiments. They clone and install the appropriate PMDK fork(s) and run patches, where applicable. For more information about SafePM's PMDK forks, please see [here](https://github.com/TUM-DSE/safepm#pmdk-submodule).
 
 ### pmembench
 `pmembench` is a benchmark driver shipped with PMDK. Its source code can be found in `$(PMDK_root)/src/benchmarks/pmembench.cpp`. It is accompanied with a set of configurations files that define the parameters of each benchmark run. These configurations are placed in `$(PMDK_root)/src/benchmarks/` folder.
@@ -100,7 +100,7 @@ The instructions to clone and install the above libraries can be found in the Do
 The configurations for `pmemkv_bench` are in the `$(SafePM_root)/benchmarks/pmemkv/run-all.sh` script. Further parameters for the `pmemkv` benchmarks, such as the thread count and benchmark type, can be found in each of the `$(SafePM_root)/benchmarks/pmemkv/run-pmemkv-bench-$(variant).sh` scripts
 
 ### RIPE benchmark
-The source code for the RIPE benchmark and our port to PM are placed in `$(SafePM_root)/benchmarks/ripe/source` directory. The `ripe_tester.py` script acts as a driver for the RIPE executable. The attack parameters are defined in lists starting from [here](https://github.com/mstniy/safepm/blob/master/benchmarks/ripe/ripe_tester.py#L22). The RIPE benchmark variants and the parameters we provide to `ripe_tester.py` in our experiments can be found in the [`$(SafePM_root)/benchmarks/ripe/run-variants.sh`](https://github.com/mstniy/safepm/blob/0fb7c269b927abc65b51a992ec0c805fa4c08a62/benchmarks/ripe/run-variants.sh) script.
+The source code for the RIPE benchmark and our port to PM are placed in `$(SafePM_root)/benchmarks/ripe/source` directory. The `ripe_tester.py` script acts as a driver for the RIPE executable. The attack parameters are defined in lists starting from [here](https://github.com/TUM-DSE/safepm/blob/master/benchmarks/ripe/ripe_tester.py#L22). The RIPE benchmark variants and the parameters we provide to `ripe_tester.py` in our experiments can be found in the [`$(SafePM_root)/benchmarks/ripe/run-variants.sh`](https://github.com/TUM-DSE/safepm/blob/0fb7c269b927abc65b51a992ec0c805fa4c08a62/benchmarks/ripe/run-variants.sh) script.
 
 Note that for `valgrind`, we used [this version](https://github.com/pmem/valgrind/tree/06f15d69237501852dd29883940e18da4179830a).
 
@@ -129,4 +129,4 @@ We require the following software configuration to reproduce our experimental re
 To use SafePM in a native environment the required software dependencies are the same as those of [PMDK v1.9.2](https://github.com/pmem/pmdk/tree/1.9.2#dependencies) and can also be found in the respective Dockerfiles in our benchmarks' directories.
 
 ## SafePM code structure
-For more information about the source code structure please see [here](https://github.com/mstniy/safepm/blob/master/Readme.md#safepm-source-code-organization).
+For more information about the source code structure please see [here](https://github.com/TUM-DSE/safepm/blob/master/Readme.md#safepm-source-code-organization).

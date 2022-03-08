@@ -6,13 +6,13 @@ Memory safety violation is a major root cause of reliability and security issues
 
 SafePM was published in Eurosys 2022.
 The artifact evaluation folder contains the required scripts to reproduce the results and the figures from our Paper.
-For more information please look at our [Artifact Evaluation folder](https://github.com/mstniy/safepm/tree/master/artifact_evaluation).
+For more information please look at our [Artifact Evaluation folder](https://github.com/TUM-DSE/safepm/tree/master/artifact_evaluation).
 
 ## Installation
 
 Initially clone the repository:
 ```
-git clone git@github.com:mstniy/safepm.git
+git clone git@github.com:TUM-DSE/safepm.git
 ```
 
 This repository includes the SafePM's PMDK fork as a submodule, so make sure you initialize it first:  
@@ -38,7 +38,7 @@ This submodule is our modified PMDK fork. Our branches of interest are the follo
 3. `vanilla-1.9.2`: Unmodified PMDK (referred as `native` in the paper).
 
 ### Benchmarks
-This folder contains the benchmark drivers and scripts used for the evaluation of SafePM. For more details and configuration information, see the folder [`benchmarks`](https://github.com/mstniy/safepm/tree/master/benchmarks).
+This folder contains the benchmark drivers and scripts used for the evaluation of SafePM. For more details and configuration information, see the folder [`benchmarks`](https://github.com/TUM-DSE/safepm/tree/master/benchmarks).
 ### Utils
 Currently, there is only one utility program: `pool_overhead`. It gets built together with the tests. Set the environment variable `POOL_SIZE` and run it to get an estimate of the user-available area (excluding e.g. the PMDK metadata and the SafePM persistent shadow memory).
 ### Tests
