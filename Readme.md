@@ -4,6 +4,7 @@ Memory safety violation is a major root cause of reliability and security issues
 
 ## Artifact evaluation
 
+[![DOI](https://zenodo.org/badge/467637722.svg)](https://zenodo.org/badge/latestdoi/467637722)
 SafePM was published in Eurosys 2022.
 The artifact evaluation folder contains the required scripts to reproduce the results and the figures from our Paper.
 For more information please look at our [Artifact Evaluation folder](https://github.com/TUM-DSE/safepm/tree/master/artifact_evaluation).
